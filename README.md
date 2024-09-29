@@ -11,3 +11,5 @@ maimai でらっくす PRiSM の KALEIDXSCOPE 用プレイ履歴管理ツール
 |Linter & Formatter|Biome|
 |Build & Bundler|Vite|
 |Frontend|React|
+|CI/CD|GitHub Action|
+|Deploy|Cloudflare Pages|
