@@ -4,5 +4,24 @@
   "workspaceFolder": "/app",
   "service": "app",
   "remoteUser": "vscode",
-  "updateRemoteUserUID": false
+  "updateRemoteUserUID": false,
+  "postCreateCommand": "bun i",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "biomejs.biome",
+        "davidanson.vscode-markdownlint",
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "humao.rest-client",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "oderwat.indent-rainbow",
+        "shardulm94.trailing-spaces"
+      ]
+    }
+  }
 }
