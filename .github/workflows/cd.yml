@@ -8,7 +8,25 @@ jobs:
       contents: read
       deployments: write
       statuses: write
+    strategy:
+      matrix:
+        # https://github.com/actions/node-versions/tags
+        node-version: [22.x]
     steps:
+      - name: Checkout code
+        # https://github.com/actions/checkout/tags
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        # https://github.com/actions/setup-node/tags
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install bun
+        run: npm i -g bun
+      - name: Install node modules
+        run: bun i
+      - name: Run build
+        run: bun run build
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
