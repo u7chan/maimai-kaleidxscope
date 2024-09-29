@@ -1,0 +1,8 @@
+{
+  "name": "dev",
+  "dockerComposeFile": "compose.yml",
+  "workspaceFolder": "/app",
+  "service": "app",
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": false
+}
