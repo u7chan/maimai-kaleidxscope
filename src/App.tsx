@@ -16,7 +16,7 @@ function App() {
           <img src={reactLogo} className='logo react' alt='React logo' />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Deploy Test</h1>
       <div className='card'>
         {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
         <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
