@@ -9,7 +9,10 @@
   "customizations": {
     "vscode": {
       "settings": {
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "files.associations": {
+          "*.css": "tailwindcss"
+        }
       },
       "extensions": [
         "biomejs.biome",
@@ -20,7 +23,8 @@
         "formulahendry.auto-rename-tag",
         "formulahendry.auto-close-tag",
         "oderwat.indent-rainbow",
-        "shardulm94.trailing-spaces"
+        "shardulm94.trailing-spaces",
+        "bradlc.vscode-tailwindcss"
       ]
     }
   }
