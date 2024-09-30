@@ -12,6 +12,15 @@
         "editor.formatOnSave": true,
         "files.associations": {
           "*.css": "tailwindcss"
+        },
+        // Automatic Tailwind CSS class sorting with Biome
+        "emeraldwalk.runonsave": {
+          "commands": [
+            {
+              "match": "\\.(ts|tsx|js|jsx|html)$",
+              "cmd": "bunx @biomejs/biome lint \"${file}\" --write --unsafe"
+            }
+          ]
         }
       },
       "extensions": [
@@ -24,7 +33,8 @@
         "formulahendry.auto-close-tag",
         "oderwat.indent-rainbow",
         "shardulm94.trailing-spaces",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "emeraldwalk.runonsave"
       ]
     }
   }
