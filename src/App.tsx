@@ -30,7 +30,12 @@ function App() {
           </div>
         </div>
         <div className='flex w-[48px] items-center justify-center'>
-          <Checkbox color='green' />
+          <Checkbox
+            color='green'
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+            crossOrigin={undefined}
+          />
         </div>
       </div>
       <div className='my-2 h-px border-1 bg-gray-200' />
