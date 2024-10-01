@@ -7,7 +7,7 @@ function App() {
       <div className='mt-2 flex justify-center'>
         <div>KALEIDXSCOPE -青春エリア-</div>
       </div>
-      <div className='mt-4 flex gap-3 '>
+      <div className='mt-4 flex gap-3'>
         <img
           src='./dummy.png'
           alt=''
@@ -28,7 +28,12 @@ function App() {
           </div>
         </div>
         <div className='flex w-[48px] items-center justify-center'>
-          <input type='checkbox' />
+          <label className='inline-flex h-20 cursor-pointer items-center px-6'>
+            <input
+              type='checkbox'
+              className='h-6 w-6 cursor-pointer rounded border-gray-300 bg-gray-100 focus:outline-none focus:ring-opacity-25'
+            />
+          </label>
         </div>
       </div>
       <div className='my-2 h-px border-1 bg-gray-200' />
