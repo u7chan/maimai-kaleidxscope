@@ -9,7 +9,6 @@ function App() {
       <div className='mt-2 flex justify-center'>
         <div>KALEIDXSCOPE -青春エリア-</div>
       </div>
-
       <div className='mt-4 flex gap-3 '>
         <img
           src='./dummy.png'
