@@ -1,5 +1,3 @@
-import { Checkbox } from '@material-tailwind/react'
-
 function App() {
   return (
     <div className='container mx-auto px-4'>
@@ -30,12 +28,7 @@ function App() {
           </div>
         </div>
         <div className='flex w-[48px] items-center justify-center'>
-          <Checkbox
-            color='green'
-            onPointerEnterCapture={undefined}
-            onPointerLeaveCapture={undefined}
-            crossOrigin={undefined}
-          />
+          <input type='checkbox' />
         </div>
       </div>
       <div className='my-2 h-px border-1 bg-gray-200' />
