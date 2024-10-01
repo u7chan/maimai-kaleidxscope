@@ -7,8 +7,13 @@ function App() {
       <div className='mt-2 flex justify-center'>
         <div>KALEIDXSCOPE -青春エリア-</div>
       </div>
-      <div className='mt-4 flex gap-3'>
-        <img src='./dummy.png' alt='' className='size-[80px] rounded-md border border-gray-500' />
+
+      <div className='mt-4 flex gap-3 '>
+        <img
+          src='./dummy.png'
+          alt=''
+          className='size-[80px] select-none rounded-md border border-gray-500'
+        />
         <div className='flex-1 '>
           <div className='line-clamp-2 h-[52px] '>
             プリズム△▽リズムぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんぁあぃいぅうぇえぉおかがきぎくぐけ
@@ -28,10 +33,11 @@ function App() {
             id='default-checkbox'
             type='checkbox'
             value=''
-            className='h-4 w-4 scale-125 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600'
+            className='h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600'
           />
         </div>
       </div>
+      <div className='my-2 h-px border-1 bg-gray-200' />
     </div>
   )
 }
