@@ -33,7 +33,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          projectName: maimai-kaleidxscope
+          projectName: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
           directory: ./dist
           branch: main
 
