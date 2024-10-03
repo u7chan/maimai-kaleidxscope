@@ -1,38 +1,17 @@
 import type { Chart } from './types'
+import { defaultCharts } from './defaultCharts'
 
 interface ChartRepository {
   fetch: () => Chart[]
 }
 
+const KEY_CHARTS_CACHE = 'KEY_CHARTS_CACHE'
+
 const chartRepositoryImpl: ChartRepository = {
   fetch: (): Chart[] => {
-    return [
-      {
-        id: '1',
-        title: 'プリズム△▽リズム1',
-        version: 'maimai でらっくす PRiSM',
-        jacket: './dummy.png',
-        level: [
-          { type: 'expert', value: '12' },
-          { type: 'master', value: '13' },
-        ],
-        played: true,
-      },
-      {
-        id: '2',
-        title: 'プリズム△▽リズム2',
-        version: 'maimai でらっくす PRiSM Plus',
-        jacket: './dummy.png',
-        level: [
-          { type: 'master', value: '13' },
-          { type: 'remaster', value: '13+' },
-        ],
-        played: false,
-      },
-    ]
+    const charts = JSON.parse(localStorage.getItem(KEY_CHARTS_CACHE) || '[]') as Chart[]
+    return charts.length > 0 ? charts : defaultCharts
   },
 }
 
-export function getChartRepository(): ChartRepository {
-  return chartRepositoryImpl
-}
+export const chartRepository: ChartRepository = chartRepositoryImpl
