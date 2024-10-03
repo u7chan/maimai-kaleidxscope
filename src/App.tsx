@@ -3,21 +3,15 @@ import type { Chart } from './types'
 
 interface Props {
   initialCharts: Chart[]
+  onChange?: (charts: Chart[]) => void
 }
 
 function App(props: Props) {
-  const [data, setData] = useState<
-    {
-      id: string
-      title: string
-      version: string
-      jacket: string
-      level: { type: 'expert' | 'master' | 'remaster'; value: string }[]
-      played: boolean
-    }[]
-  >(props.initialCharts)
+  const [charts, setCharts] = useState<Chart[]>(props.initialCharts)
   const handleCheckChange = (id: string, checked: boolean) => {
-    setData(data.map((x) => (x.id === id ? { ...x, played: checked } : x)))
+    const newCharts = charts.map((x) => (x.id === id ? { ...x, played: checked } : x))
+    setCharts(newCharts)
+    props.onChange?.(newCharts)
   }
   return (
     <div className='container mx-auto px-4'>
@@ -27,8 +21,8 @@ function App(props: Props) {
       <div className='mt-2 flex justify-center'>
         <div>KALEIDXSCOPE -青春エリア-</div>
       </div>
-      {data.map((data) => (
-        <React.Fragment key={data.id}>
+      {charts.map((chart) => (
+        <React.Fragment key={chart.id}>
           <div className='mt-4 flex gap-3'>
             <img
               src='./dummy.png'
@@ -36,12 +30,12 @@ function App(props: Props) {
               className='size-[80px] select-none rounded-md border border-gray-500'
             />
             <div className='flex-1 '>
-              <div className='line-clamp-2 flex h-[52px] items-center'>{data.title}</div>
-              <div className='flex h-[32px] items-center text-sm'>{data.version}</div>
+              <div className='line-clamp-2 flex h-[52px] items-center'>{chart.title}</div>
+              <div className='flex h-[32px] items-center text-sm'>{chart.version}</div>
             </div>
             <div className='flex w-[42px] flex-col justify-center gap-2'>
-              {data.level.map((level) => (
-                <React.Fragment key={`${data.id}.${level.type}.${level.value}`}>
+              {chart.level.map((level) => (
+                <React.Fragment key={`${chart.id}.${level.type}.${level.value}`}>
                   {level.type === 'expert' && (
                     <div className='flex h-6 items-center justify-center border-2 border-[#FF818D] bg-[#FF818D] font-bold text-sm text-white'>
                       {level.value}
@@ -65,8 +59,8 @@ function App(props: Props) {
                 <input
                   type='checkbox'
                   className='h-6 w-6 cursor-pointer rounded border-gray-300 bg-gray-100 focus:outline-none focus:ring-opacity-25'
-                  checked={data.played}
-                  onChange={(e) => handleCheckChange(data.id, e.target.checked)}
+                  checked={chart.played}
+                  onChange={(e) => handleCheckChange(chart.id, e.target.checked)}
                 />
               </label>
             </div>
