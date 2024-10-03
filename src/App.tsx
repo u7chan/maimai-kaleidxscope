@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
+import type { Chart } from './types'
 
-function App() {
+interface Props {
+  initialCharts: Chart[]
+}
+
+function App(props: Props) {
   const [data, setData] = useState<
     {
       id: string
@@ -10,30 +15,7 @@ function App() {
       level: { type: 'expert' | 'master' | 'remaster'; value: string }[]
       played: boolean
     }[]
-  >([
-    {
-      id: '1',
-      title: 'プリズム△▽リズム1',
-      version: 'maimai でらっくす PRiSM',
-      jacket: './dummy.png',
-      level: [
-        { type: 'expert', value: '12' },
-        { type: 'master', value: '13' },
-      ],
-      played: true,
-    },
-    {
-      id: '2',
-      title: 'プリズム△▽リズム2',
-      version: 'maimai でらっくす PRiSM Plus',
-      jacket: './dummy.png',
-      level: [
-        { type: 'master', value: '13' },
-        { type: 'remaster', value: '13+' },
-      ],
-      played: false,
-    },
-  ])
+  >(props.initialCharts)
   const handleCheckChange = (id: string, checked: boolean) => {
     setData(data.map((x) => (x.id === id ? { ...x, played: checked } : x)))
   }
