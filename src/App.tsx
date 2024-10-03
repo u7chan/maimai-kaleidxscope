@@ -28,13 +28,13 @@ function App(props: Props) {
         <React.Fragment key={chart.id}>
           <div className='mt-4 flex gap-3'>
             <img
-              src='./dummy.png'
+              src={`./seisyun-chiho/${chart.jacket}`}
               alt=''
               className='size-[80px] select-none rounded-md border border-gray-500'
             />
             <div className='flex-1 '>
               <div className='line-clamp-2 flex h-[52px] items-center'>{chart.title}</div>
-              <div className='flex h-[32px] items-center text-sm'>{chart.version}</div>
+              <div className='flex h-[32px] items-center font-bold text-xs'>{chart.version}</div>
             </div>
             <div className='flex w-[42px] flex-col justify-center gap-2'>
               {chart.level.map((level) => (
