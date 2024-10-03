@@ -1,0 +1,14 @@
+{
+  "name": "scripts",
+  "type": "commonjs",
+  "scripts": {
+    "csv2json": "ts-node -r tsconfig-paths/register src/csv2json.ts"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.6",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.2",
+    "zod": "^3.23.8"
+  }
+}
