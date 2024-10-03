@@ -19,7 +19,10 @@ function App(props: Props) {
         <img src='./logo.png' alt='logo' />
       </div>
       <div className='mt-2 flex justify-center'>
-        <div>KALEIDXSCOPE -青春エリア-</div>
+        <div>
+          <div>KALEIDXSCOPE -青春エリア-</div>
+          <div className='text-center text-xs'>青春エリア内の楽曲を29曲</div>
+        </div>
       </div>
       {charts.map((chart) => (
         <React.Fragment key={chart.id}>
