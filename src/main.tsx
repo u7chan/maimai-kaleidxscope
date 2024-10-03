@@ -7,6 +7,9 @@ import './index.css'
 // biome-ignore lint/style/noNonNullAssertion: <explanation>
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App initialCharts={chartRepository.fetch()} />
+    <App
+      initialCharts={chartRepository.fetch()}
+      onChange={(charts) => chartRepository.save(charts)}
+    />
   </StrictMode>,
 )
