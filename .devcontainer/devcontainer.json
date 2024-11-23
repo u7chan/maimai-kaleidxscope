@@ -1,11 +1,16 @@
 {
-  "name": "dev",
-  "dockerComposeFile": "compose.yml",
-  "workspaceFolder": "/app",
-  "service": "app",
+  "name": "maimai-kaleidxscop",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "mounts": [
+    "source=${localWorkspaceFolderBasename}-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+    "source=${localWorkspaceFolderBasename}-dist,target=${containerWorkspaceFolder}/dist,type=volume"
+  ],
   "remoteUser": "vscode",
   "updateRemoteUserUID": false,
-  "postCreateCommand": "bun i",
+  "initializeCommand": "mkdir dist && mkdir node_modules",
+  "postCreateCommand": "sudo chown -R vscode:vscode /workspaces && bun i",
   "customizations": {
     "vscode": {
       "settings": {
